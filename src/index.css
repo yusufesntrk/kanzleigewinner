@@ -20,20 +20,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    /* Primary - Kanzleigewinner Blue #2ea3f2 = hsl(199, 87%, 56%) */
-    --primary: 199 87% 56%;
+    /* Primary - Kanzleigewinner Red */
+    --primary: 0 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - dark blue/navy */
-    --secondary: 215 45% 12%;
+    /* Secondary - dark charcoal */
+    --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted - soft gray */
-    --muted: 210 20% 90%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 0 5% 90%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent - bright blue */
-    --accent: 199 100% 45%;
+    /* Accent - vibrant red-orange */
+    --accent: 10 90% 50%;
     --accent-foreground: 0 0% 100%;
 
     /* Destructive */
@@ -41,9 +41,9 @@
     --destructive-foreground: 0 0% 100%;
 
     /* Borders */
-    --border: 210 25% 88%;
-    --input: 210 25% 88%;
-    --ring: 199 87% 56%;
+    --border: 0 5% 88%;
+    --input: 0 5% 88%;
+    --ring: 0 85% 55%;
 
     --radius: 0.75rem;
 
@@ -55,8 +55,8 @@
     --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -2px hsl(215 25% 15% / 0.06);
     --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -4px hsl(215 25% 15% / 0.08);
-    --shadow-card: 0 4px 20px -2px hsl(215 25% 15% / 0.08);
-    --shadow-button: 0 2px 8px 0 hsl(199 87% 56% / 0.25);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 15% / 0.08);
+    --shadow-button: 0 2px 8px 0 hsl(0 85% 55% / 0.3);
   }
 }
 
