@@ -1,204 +1,226 @@
-const RecruitingAnimation = () => {
+import { useEffect, useState } from "react";
+
+const steps = [
+  { id: 1, label: "Anfrage stellen", icon: "send" },
+  { id: 2, label: "Profile aussuchen", icon: "profiles" },
+  { id: 3, label: "Bewerbungsgespräch", icon: "interview" },
+  { id: 4, label: "Einstellen", icon: "hire" },
+];
+
+const RecruitingCycleAnimation = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % 4);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="relative w-full max-w-lg mx-auto h-80 md:h-96">
-      {/* CSS Animations */}
+    <div className="relative w-full max-w-xl mx-auto py-16">
       <style>{`
-        @keyframes profile-pop {
-          0% { transform: scale(0) rotate(-10deg); opacity: 0; }
-          50% { transform: scale(1.1) rotate(2deg); }
-          100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        @keyframes cycle-pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.9; }
         }
 
-        @keyframes slide-in-right {
-          0% { transform: translateX(100px); opacity: 0; }
-          100% { transform: translateX(0); opacity: 1; }
+        @keyframes dash-rotate {
+          0% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: -31.4; }
         }
 
-        @keyframes check-draw {
-          0% { stroke-dashoffset: 50; }
-          100% { stroke-dashoffset: 0; }
-        }
-
-        @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4); }
-          50% { box-shadow: 0 0 0 15px hsl(var(--primary) / 0); }
-        }
-
-        @keyframes float-up {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-
-        @keyframes connection-draw {
-          0% { stroke-dashoffset: 200; }
-          100% { stroke-dashoffset: 0; }
-        }
-
-        @keyframes badge-bounce {
-          0% { transform: scale(0); }
-          60% { transform: scale(1.2); }
+        @keyframes icon-pop {
+          0% { transform: scale(0.8); }
+          50% { transform: scale(1.1); }
           100% { transform: scale(1); }
         }
 
-        .profile-card {
-          animation: profile-pop 0.5s ease-out forwards, float-up 3s ease-in-out infinite;
+        @keyframes check-appear {
+          0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+          100% { transform: scale(1) rotate(0deg); opacity: 1; }
         }
 
-        .profile-1 { animation-delay: 0s, 0.5s; }
-        .profile-2 { animation-delay: 0.2s, 0.7s; }
-        .profile-3 { animation-delay: 0.4s, 0.9s; }
-
-        .request-arrow {
-          animation: slide-in-right 0.6s ease-out 1s forwards;
-          opacity: 0;
+        @keyframes arrow-flow {
+          0% { stroke-dashoffset: 20; }
+          100% { stroke-dashoffset: 0; }
         }
 
-        .check-circle {
-          animation: badge-bounce 0.5s ease-out 2s forwards;
-          transform: scale(0);
+        .step-active {
+          animation: cycle-pulse 1s ease-in-out infinite;
         }
 
-        .check-mark {
-          stroke-dasharray: 50;
-          stroke-dashoffset: 50;
-          animation: check-draw 0.4s ease-out 2.3s forwards;
+        .icon-active {
+          animation: icon-pop 0.4s ease-out;
         }
 
-        .connection-line {
-          stroke-dasharray: 200;
-          stroke-dashoffset: 200;
-          animation: connection-draw 0.8s ease-out 0.8s forwards;
+        .check-active {
+          animation: check-appear 0.3s ease-out forwards;
         }
 
-        .glow-ring {
-          animation: pulse-glow 2s ease-in-out infinite;
-          animation-delay: 2.5s;
+        .arrow-animated {
+          stroke-dasharray: 10 10;
+          animation: arrow-flow 1s linear infinite;
         }
       `}</style>
 
-      {/* SVG Animation Container */}
-      <svg viewBox="0 0 400 300" className="w-full h-full">
-        {/* Background Grid Pattern */}
-        <defs>
-          <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(var(--border))" strokeWidth="0.5" opacity="0.3"/>
-          </pattern>
-
-          {/* Gradient for profiles */}
-          <linearGradient id="profileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--card))"/>
-            <stop offset="100%" stopColor="hsl(var(--muted))"/>
-          </linearGradient>
-
-          {/* Primary color gradient */}
-          <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(var(--primary))"/>
-            <stop offset="100%" stopColor="hsl(var(--accent))"/>
-          </linearGradient>
-        </defs>
-
-        <rect width="400" height="300" fill="url(#grid)"/>
-
-        {/* Profile Cards - Left Side */}
-        <g className="profile-card profile-1">
-          <rect x="30" y="60" width="80" height="100" rx="12" fill="url(#profileGrad)" stroke="hsl(var(--border))" strokeWidth="2"/>
-          <circle cx="70" cy="95" r="20" fill="hsl(var(--primary) / 0.2)"/>
-          <circle cx="70" cy="95" r="15" fill="hsl(var(--primary) / 0.3)"/>
-          <rect x="45" y="125" width="50" height="6" rx="3" fill="hsl(var(--muted-foreground) / 0.3)"/>
-          <rect x="50" y="137" width="40" height="4" rx="2" fill="hsl(var(--muted-foreground) / 0.2)"/>
-          {/* Status indicator */}
-          <circle cx="100" cy="70" r="8" fill="hsl(var(--success))"/>
-        </g>
-
-        <g className="profile-card profile-2">
-          <rect x="40" y="130" width="80" height="100" rx="12" fill="url(#profileGrad)" stroke="hsl(var(--border))" strokeWidth="2"/>
-          <circle cx="80" cy="165" r="20" fill="hsl(var(--accent) / 0.2)"/>
-          <circle cx="80" cy="165" r="15" fill="hsl(var(--accent) / 0.3)"/>
-          <rect x="55" y="195" width="50" height="6" rx="3" fill="hsl(var(--muted-foreground) / 0.3)"/>
-          <rect x="60" y="207" width="40" height="4" rx="2" fill="hsl(var(--muted-foreground) / 0.2)"/>
-          <circle cx="110" cy="140" r="8" fill="hsl(var(--success))"/>
-        </g>
-
-        <g className="profile-card profile-3">
-          <rect x="20" y="40" width="70" height="90" rx="10" fill="url(#profileGrad)" stroke="hsl(var(--border))" strokeWidth="2" transform="translate(100, 80) scale(0.8)"/>
-          <circle cx="115" cy="115" r="16" fill="hsl(var(--primary) / 0.15)"/>
-          <circle cx="115" cy="115" r="12" fill="hsl(var(--primary) / 0.25)"/>
-          <rect x="98" y="138" width="35" height="5" rx="2.5" fill="hsl(var(--muted-foreground) / 0.3)"/>
-          <circle cx="145" cy="95" r="6" fill="hsl(var(--success))"/>
-        </g>
-
-        {/* Connection Lines */}
-        <path
-          className="connection-line"
-          d="M 130 120 Q 180 100 230 130"
-          fill="none"
-          stroke="hsl(var(--primary))"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        <path
-          className="connection-line"
-          d="M 120 180 Q 180 160 230 150"
-          fill="none"
-          stroke="hsl(var(--primary))"
-          strokeWidth="3"
-          strokeLinecap="round"
-          style={{ animationDelay: '1s' }}
-        />
-
-        {/* Request Arrow / Kanzlei Side */}
-        <g className="request-arrow">
-          {/* Kanzlei Building Icon */}
-          <rect x="250" y="100" width="100" height="80" rx="10" fill="url(#profileGrad)" stroke="hsl(var(--primary))" strokeWidth="2"/>
-          <rect x="270" y="120" width="20" height="25" rx="3" fill="hsl(var(--primary) / 0.2)"/>
-          <rect x="310" y="120" width="20" height="25" rx="3" fill="hsl(var(--primary) / 0.2)"/>
-          <rect x="285" y="150" width="30" height="30" rx="3" fill="hsl(var(--primary) / 0.3)"/>
-
-          {/* "KANZLEI" Text */}
-          <text x="300" y="195" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="10" fontWeight="600">IHRE KANZLEI</text>
-        </g>
-
-        {/* Success Badge */}
-        <g className="check-circle glow-ring" style={{ transformOrigin: '300px 70px' }}>
-          <circle cx="300" cy="70" r="25" fill="url(#primaryGrad)"/>
-          <path
-            className="check-mark"
-            d="M 288 70 L 296 78 L 312 62"
-            fill="none"
-            stroke="white"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-
-        {/* "1 WOCHE" Badge */}
-        <g className="check-circle" style={{ transformOrigin: '300px 240px', animationDelay: '2.5s' }}>
-          <rect x="255" y="225" width="90" height="30" rx="15" fill="url(#primaryGrad)"/>
-          <text x="300" y="245" textAnchor="middle" fill="white" fontSize="12" fontWeight="700">1 WOCHE</text>
-        </g>
-
-        {/* Floating Particles */}
-        {[...Array(5)].map((_, i) => (
-          <circle
-            key={i}
-            cx={50 + i * 70}
-            cy={30 + (i % 3) * 100}
-            r={3 + (i % 2) * 2}
-            fill="hsl(var(--primary) / 0.3)"
-            className="profile-card"
-            style={{ animationDelay: `${i * 0.3}s, ${i * 0.2}s` }}
-          />
-        ))}
-      </svg>
-
-      {/* Labels */}
-      <div className="absolute bottom-0 left-0 right-0 flex justify-between px-4 text-xs md:text-sm text-muted-foreground">
-        <span className="bg-card/80 backdrop-blur-sm px-2 py-1 rounded">Profile bereit</span>
-        <span className="bg-card/80 backdrop-blur-sm px-2 py-1 rounded">Sofort verfügbar</span>
+      {/* Center Badge - 1-2 Wochen */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="w-28 h-28 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-xl">
+          <div className="text-center text-white">
+            <div className="text-2xl font-bold">1-2</div>
+            <div className="text-xs font-medium opacity-90">Wochen</div>
+          </div>
+        </div>
       </div>
+
+      {/* Circular Layout */}
+      <svg viewBox="0 0 400 400" className="w-full h-auto">
+        {/* Background Circle */}
+        <circle
+          cx="200"
+          cy="200"
+          r="150"
+          fill="none"
+          stroke="hsl(var(--border))"
+          strokeWidth="2"
+          strokeDasharray="10 5"
+        />
+
+        {/* Animated Progress Circle */}
+        <circle
+          cx="200"
+          cy="200"
+          r="150"
+          fill="none"
+          stroke="hsl(var(--primary))"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeDasharray={`${(activeStep + 1) * 235.6 / 4} 942.5`}
+          transform="rotate(-90 200 200)"
+          style={{ transition: 'stroke-dasharray 0.5s ease-out' }}
+        />
+
+        {/* Step Nodes */}
+        {steps.map((step, index) => {
+          const angle = (index * 90 - 90) * (Math.PI / 180);
+          const x = 200 + 150 * Math.cos(angle);
+          const y = 200 + 150 * Math.sin(angle);
+          const isActive = activeStep === index;
+          const isPast = activeStep > index || (activeStep === 0 && index === 3);
+
+          return (
+            <g key={step.id}>
+              {/* Connection Arrow */}
+              {index < 3 && (
+                <path
+                  d={`M ${x + 35 * Math.cos(angle + Math.PI/2)} ${y + 35 * Math.sin(angle + Math.PI/2)}
+                      Q ${200 + 110 * Math.cos(angle + Math.PI/4)} ${200 + 110 * Math.sin(angle + Math.PI/4)}
+                      ${200 + 150 * Math.cos(((index + 1) * 90 - 90) * Math.PI / 180) - 35 * Math.cos(((index + 1) * 90 - 90) * Math.PI / 180 - Math.PI/2)}
+                      ${200 + 150 * Math.sin(((index + 1) * 90 - 90) * Math.PI / 180) - 35 * Math.sin(((index + 1) * 90 - 90) * Math.PI / 180 - Math.PI/2)}`}
+                  fill="none"
+                  stroke={isPast || isActive ? "hsl(var(--primary))" : "hsl(var(--border))"}
+                  strokeWidth="2"
+                  className={isActive ? "arrow-animated" : ""}
+                  opacity={0.5}
+                />
+              )}
+
+              {/* Node Circle */}
+              <circle
+                cx={x}
+                cy={y}
+                r="35"
+                fill={isActive ? "hsl(var(--primary))" : isPast ? "hsl(var(--primary) / 0.2)" : "hsl(var(--card))"}
+                stroke={isActive || isPast ? "hsl(var(--primary))" : "hsl(var(--border))"}
+                strokeWidth="3"
+                className={isActive ? "step-active" : ""}
+                style={{ transition: 'all 0.3s ease-out' }}
+              />
+
+              {/* Icon */}
+              <g className={isActive ? "icon-active" : ""}>
+                {step.icon === "send" && (
+                  <path
+                    d={`M ${x - 10} ${y + 5} L ${x + 10} ${y - 5} L ${x + 10} ${y + 12} L ${x - 10} ${y + 5} M ${x + 10} ${y - 5} L ${x - 5} ${y - 5}`}
+                    fill="none"
+                    stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"}
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                )}
+                {step.icon === "profiles" && (
+                  <>
+                    <circle cx={x - 8} cy={y - 5} r="6" fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" />
+                    <circle cx={x + 8} cy={y - 5} r="6" fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" />
+                    <path d={`M ${x - 14} ${y + 10} Q ${x - 8} ${y + 3} ${x - 2} ${y + 10}`} fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" />
+                    <path d={`M ${x + 2} ${y + 10} Q ${x + 8} ${y + 3} ${x + 14} ${y + 10}`} fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" />
+                  </>
+                )}
+                {step.icon === "interview" && (
+                  <>
+                    <rect x={x - 12} y={y - 10} width="24" height="16" rx="3" fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" />
+                    <circle cx={x - 4} cy={y - 2} r="2" fill={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
+                    <circle cx={x + 4} cy={y - 2} r="2" fill={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} />
+                    <path d={`M ${x - 6} ${y + 8} L ${x} ${y + 12} L ${x + 6} ${y + 8}`} fill="none" stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"} strokeWidth="2" strokeLinecap="round" />
+                  </>
+                )}
+                {step.icon === "hire" && (
+                  <path
+                    d={`M ${x - 8} ${y} L ${x - 2} ${y + 6} L ${x + 10} ${y - 6}`}
+                    fill="none"
+                    stroke={isActive ? "white" : isPast ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"}
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={isPast && !isActive ? "check-active" : ""}
+                  />
+                )}
+              </g>
+
+              {/* Label */}
+              <text
+                x={x}
+                y={y + (index === 0 ? -55 : index === 2 ? 60 : 0)}
+                dx={index === 1 ? 55 : index === 3 ? -55 : 0}
+                textAnchor="middle"
+                fill={isActive ? "hsl(var(--primary))" : "hsl(var(--muted-foreground))"}
+                fontSize="13"
+                fontWeight={isActive ? "600" : "500"}
+                style={{ transition: 'all 0.3s ease-out' }}
+              >
+                {step.label}
+              </text>
+
+              {/* Step Number */}
+              <text
+                x={x}
+                y={y + (index === 0 ? -70 : index === 2 ? 75 : 0)}
+                dx={index === 1 ? 55 : index === 3 ? -55 : 0}
+                textAnchor="middle"
+                fill={isActive ? "hsl(var(--primary))" : "hsl(var(--muted-foreground) / 0.5)"}
+                fontSize="10"
+                fontWeight="600"
+              >
+                0{step.id}
+              </text>
+            </g>
+          );
+        })}
+
+        {/* Return Arrow (Step 4 to Step 1) */}
+        <path
+          d="M 165 55 Q 100 100 55 165"
+          fill="none"
+          stroke={activeStep === 3 ? "hsl(var(--primary))" : "hsl(var(--border))"}
+          strokeWidth="2"
+          strokeDasharray="5 5"
+          opacity="0.5"
+        />
+      </svg>
     </div>
   );
 };
 
-export default RecruitingAnimation;
+export default RecruitingCycleAnimation;
