@@ -1,18 +1,18 @@
 const testimonials = [
   {
-    quote: "Dank Kanzleigewinner konnten wir innerhalb von 3 Monaten 5 neue qualifizierte Mitarbeiter einstellen. Das Social Recruiting System funktioniert hervorragend.",
+    quote: "Innerhalb von 4 Wochen hatten wir 3 qualifizierte Steuerfachangestellte zur Auswahl. Der Prozess war unkompliziert und professionell.",
     author: "Thomas M.",
     role: "Steuerberater, München",
     avatar: "TM",
   },
   {
-    quote: "Die neue Website hat unsere Online-Präsenz komplett transformiert. Wir erhalten jetzt regelmäßig Anfragen von Wunsch-Mandanten.",
+    quote: "Wir haben monatelang selbst gesucht ohne Erfolg. Kanzleigewinner hat uns in kürzester Zeit den perfekten Bilanzbuchhalter vermittelt.",
     author: "Sandra K.",
-    role: "Rechtsanwältin, Frankfurt",
+    role: "Kanzleiinhaberin, Frankfurt",
     avatar: "SK",
   },
   {
-    quote: "Professionelle Beratung und schnelle Umsetzung. Das Team versteht die Bedürfnisse einer modernen Kanzlei.",
+    quote: "Die Vorauswahl ist Gold wert. Wir bekommen nur Kandidaten, die wirklich zu uns passen. Das spart enorm viel Zeit.",
     author: "Michael B.",
     role: "Steuerberater, Hamburg",
     avatar: "MB",
@@ -27,10 +27,10 @@ const TestimonialsSection = () => {
         <div className="text-center mb-16">
           <p className="text-primary font-medium mb-4 animate-fade-in">Kundenstimmen</p>
           <h2 className="section-heading mb-4 animate-fade-in-up">
-            Was unsere Kunden sagen
+            Das sagen unsere Kunden
           </h2>
           <p className="section-subheading mx-auto animate-fade-in-up animation-delay-100">
-            Erfahren Sie, wie wir Kanzleien in ganz Deutschland zum Erfolg verholfen haben.
+            Kanzleien aus ganz Deutschland vertrauen auf unsere Personalvermittlung.
           </p>
         </div>
 

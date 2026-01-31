@@ -2,43 +2,42 @@ const services = [
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    ),
+    title: "Active Sourcing",
+    description: "Wir suchen proaktiv nach passenden Kandidaten in unserem Netzwerk und auf allen relevanten Plattformen.",
+    features: ["LinkedIn & Xing Recruiting", "Direktansprache", "Kandidaten-Datenbank"],
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
     title: "Social Recruiting",
-    description: "Datengetriebenes Recruiting über Facebook, Instagram, LinkedIn und Xing. Qualifizierte Fachkräfte auf Knopfdruck.",
-    features: ["Facebook & Instagram Ads", "LinkedIn Recruiting", "Automatisierte Bewerberprozesse"],
+    description: "Datengetriebene Kampagnen auf Facebook, Instagram und LinkedIn, um auch passive Kandidaten zu erreichen.",
+    features: ["Facebook & Instagram Ads", "Zielgruppen-Targeting", "Performance-Optimierung"],
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Kanzlei-Websites",
-    description: "Moderne, konvertierende Websites speziell für Steuerberater und Rechtsanwälte. Professionell und mandantenorientiert.",
-    features: ["Responsive Design", "SEO-optimiert", "Schnelle Ladezeiten"],
+    title: "Kandidaten-Vorauswahl",
+    description: "Wir prüfen Qualifikationen, führen Erstgespräche und präsentieren Ihnen nur passende Bewerber.",
+    features: ["Qualifikations-Check", "Telefon-Interviews", "Persönlichkeits-Matching"],
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Mandanten-Gewinnung",
-    description: "Strategische Online-Marketing Kampagnen zur Gewinnung von Wunsch-Mandanten in Ihrer Region.",
-    features: ["Google Ads", "Lokale SEO", "Lead-Generierung"],
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    title: "Digitalisierung",
-    description: "Optimieren Sie Ihre internen Prozesse durch moderne digitale Lösungen und Automatisierung.",
-    features: ["Prozessoptimierung", "Digitale Workflows", "Effizienzsteigerung"],
+    title: "Schnelle Besetzung",
+    description: "Durch unser Netzwerk und erprobte Prozesse besetzen wir Ihre offenen Stellen in kürzester Zeit.",
+    features: ["Ø 4-6 Wochen Besetzungszeit", "Garantie auf Nachbesetzung", "Persönliche Betreuung"],
   },
 ];
 
@@ -50,11 +49,11 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <p className="text-primary font-medium mb-4 animate-fade-in">Unsere Leistungen</p>
           <h2 className="section-heading mb-4 animate-fade-in-up">
-            Alles aus einer Hand für Ihren Kanzleierfolg
+            So finden wir Ihre neuen Mitarbeiter
           </h2>
           <p className="section-subheading mx-auto animate-fade-in-up animation-delay-100">
-            Von der Mitarbeitergewinnung bis zur Mandantenakquise – wir bieten Ihnen
-            maßgeschneiderte Lösungen für die digitale Transformation Ihrer Kanzlei.
+            Wir kombinieren moderne Recruiting-Methoden mit tiefem Branchenwissen,
+            um die besten Fachkräfte für Ihre Kanzlei zu gewinnen.
           </p>
         </div>
 

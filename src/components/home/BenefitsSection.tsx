@@ -1,23 +1,23 @@
 const benefits = [
   {
+    number: "500+",
+    label: "Vermittlungen",
+    description: "Erfolgreich besetzte Stellen",
+  },
+  {
     number: "100+",
-    label: "Kanzleien betreut",
-    description: "Im gesamten DACH-Raum",
+    label: "Kanzleien",
+    description: "Im DACH-Raum betreut",
   },
   {
-    number: "6+",
-    label: "Jahre Erfahrung",
-    description: "Seit 2018 am Markt",
-  },
-  {
-    number: "1000+",
-    label: "Bewerbungen generiert",
-    description: "Für unsere Kunden",
+    number: "4-6",
+    label: "Wochen",
+    description: "Durchschnittliche Besetzungszeit",
   },
   {
     number: "95%",
-    label: "Kundenzufriedenheit",
-    description: "Langfristige Partnerschaften",
+    label: "Erfolgsquote",
+    description: "Nach der Probezeit",
   },
 ];
 
@@ -25,20 +25,11 @@ const reasons = [
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    title: "Branchenexperten",
-    description: "Wir kennen die Herausforderungen von Steuerberatern und Rechtsanwälten aus erster Hand.",
-  },
-  {
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-    title: "Schnelle Ergebnisse",
-    description: "Unsere erprobten Systeme liefern messbare Ergebnisse bereits in den ersten Wochen.",
+    title: "Kanzlei-Spezialisten",
+    description: "Wir verstehen die besonderen Anforderungen von Steuerberatungs- und Rechtsanwaltskanzleien.",
   },
   {
     icon: (
@@ -46,17 +37,26 @@ const reasons = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     ),
-    title: "Persönliche Betreuung",
-    description: "Ein fester Ansprechpartner begleitet Sie durch den gesamten Prozess.",
+    title: "Vorqualifizierte Kandidaten",
+    description: "Sie erhalten nur Bewerber, die wir persönlich geprüft haben und die zu Ihrer Kanzlei passen.",
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: "Messbare Erfolge",
-    description: "Transparentes Reporting und klare KPIs für Ihren nachhaltigen Erfolg.",
+    title: "Nachbesetzungs-Garantie",
+    description: "Sollte ein Kandidat in der Probezeit ausscheiden, finden wir kostenfrei Ersatz.",
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: "Erfolgsbasierte Vergütung",
+    description: "Sie zahlen erst bei erfolgreicher Vermittlung. Kein Risiko, kein Vorabkosten.",
   },
 ];
 
@@ -85,11 +85,11 @@ const BenefitsSection = () => {
         <div className="text-center mb-12">
           <p className="text-primary font-medium mb-4">Warum Kanzleigewinner?</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ihr Partner für den digitalen Erfolg
+            Ihr Partner für Kanzlei-Recruiting
           </h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Wir verstehen die besonderen Anforderungen von Kanzleien und bieten
-            maßgeschneiderte Lösungen für Ihren nachhaltigen Erfolg.
+            Der Markt für Steuerfachkräfte ist hart umkämpft. Mit uns haben Sie einen
+            spezialisierten Partner an Ihrer Seite.
           </p>
         </div>
 

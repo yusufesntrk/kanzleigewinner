@@ -2,28 +2,28 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Für welche Kanzleien ist Kanzleigewinner geeignet?",
-    answer: "Wir arbeiten mit Steuerberatungskanzleien und Rechtsanwaltskanzleien jeder Größe zusammen. Egal ob Einzelkanzlei oder größere Sozietät – unsere Lösungen sind skalierbar und werden individuell an Ihre Bedürfnisse angepasst.",
+    question: "Welche Positionen vermitteln Sie?",
+    answer: "Wir sind spezialisiert auf Fachkräfte für Steuerberatungs- und Rechtsanwaltskanzleien: Steuerfachangestellte, Steuerfachwirte, Bilanzbuchhalter, Lohnbuchhalter, Rechtsanwaltsfachangestellte und weitere Kanzlei-Positionen.",
   },
   {
-    question: "Wie schnell kann ich mit Ergebnissen rechnen?",
-    answer: "Die ersten Ergebnisse sehen unsere Kunden in der Regel bereits nach 2-4 Wochen. Bei Social Recruiting Kampagnen erhalten Sie oft schon in der ersten Woche qualifizierte Bewerbungen. Die genaue Zeitspanne hängt von Ihren individuellen Zielen ab.",
+    question: "Wie lange dauert es, bis ich Kandidaten bekomme?",
+    answer: "In der Regel präsentieren wir Ihnen die ersten qualifizierten Kandidaten innerhalb von 1-2 Wochen. Die durchschnittliche Besetzungszeit liegt bei 4-6 Wochen.",
   },
   {
-    question: "Was kostet die Zusammenarbeit?",
-    answer: "Die Kosten richten sich nach dem Umfang der gewünschten Leistungen. In einem kostenlosen Erstgespräch analysieren wir Ihre Situation und erstellen Ihnen ein individuelles Angebot – transparent und ohne versteckte Kosten.",
+    question: "Was kostet die Vermittlung?",
+    answer: "Wir arbeiten erfolgsbasiert – Sie zahlen erst, wenn Sie einen von uns vermittelten Kandidaten einstellen. Die genauen Konditionen besprechen wir im Erstgespräch.",
   },
   {
-    question: "Muss ich mich um etwas kümmern?",
-    answer: "Wir übernehmen die komplette Umsetzung für Sie. Sie müssen lediglich in einem kurzen Onboarding-Gespräch Ihre Anforderungen besprechen. Danach können Sie sich voll auf Ihr Kerngeschäft konzentrieren, während wir die digitale Arbeit erledigen.",
+    question: "Was passiert, wenn der Kandidat in der Probezeit kündigt?",
+    answer: "Wir bieten eine Nachbesetzungs-Garantie: Sollte ein Kandidat innerhalb der Probezeit ausscheiden, suchen wir kostenfrei einen Ersatz für Sie.",
   },
   {
-    question: "Arbeitet ihr auch mit Kanzleien außerhalb Deutschlands?",
-    answer: "Ja, wir betreuen Kanzleien im gesamten DACH-Raum – also Deutschland, Österreich und der Schweiz. Unsere digitalen Lösungen funktionieren standortunabhängig.",
+    question: "Wie wählen Sie die Kandidaten aus?",
+    answer: "Jeder Kandidat durchläuft einen mehrstufigen Prozess: Qualifikations-Check, Telefon-Interview, Persönlichkeits-Assessment und Abgleich mit Ihren Anforderungen. Sie erhalten nur vorgeprüfte Bewerber.",
   },
   {
-    question: "Wie läuft das Erstgespräch ab?",
-    answer: "Das Erstgespräch ist kostenlos und unverbindlich. Wir analysieren gemeinsam Ihre aktuelle Situation, besprechen Ihre Ziele und zeigen Ihnen auf, welche Potenziale wir für Ihre Kanzlei sehen. Das Gespräch dauert in der Regel 30-45 Minuten.",
+    question: "Arbeiten Sie auch mit Kanzleien außerhalb Deutschlands?",
+    answer: "Ja, wir vermitteln Fachkräfte im gesamten DACH-Raum – also Deutschland, Österreich und der Schweiz.",
   },
 ];
 
@@ -40,7 +40,7 @@ const FAQSection = () => {
             Häufig gestellte Fragen
           </h2>
           <p className="section-subheading mx-auto animate-fade-in-up animation-delay-100">
-            Hier finden Sie Antworten auf die wichtigsten Fragen zu unseren Leistungen.
+            Alles, was Sie über unsere Personalvermittlung wissen müssen.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ const FAQSection = () => {
         {/* Still have questions */}
         <div className="text-center mt-12 animate-fade-in">
           <p className="text-muted-foreground mb-4">
-            Noch Fragen? Wir helfen Ihnen gerne weiter.
+            Noch Fragen? Wir beraten Sie gerne persönlich.
           </p>
           <a href="tel:078163909966" className="btn-primary">
             Jetzt anrufen

@@ -91,34 +91,32 @@ const HeroSection = () => {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Pre-headline Badge */}
         <div className="badge-floating mb-6 animate-fade-in">
-          <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
-          <span>Über 100 Kanzleien im DACH-Raum</span>
+          <span>Personalvermittlung für Kanzleien</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-          <span className="text-secondary">Digitale </span>
+          <span className="text-secondary">Wir finden Ihre </span>
           <br />
           <span className="text-primary inline-block min-h-[1.2em]">
             <TypingEffect
               texts={[
-                'Mandanten',
-                'Mitarbeiter',
-                'Prozesse',
-                'Erfolge',
+                'Steuerfachangestellten',
+                'Bilanzbuchhalter',
+                'Steuerfachwirte',
+                'Lohnbuchhalter',
               ]}
             />
           </span>
-          <br />
-          <span className="text-secondary">für Ihre Kanzlei</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up animation-delay-200 max-w-2xl mx-auto">
-          Gehören Sie mit Ihrer Steuerkanzlei zu den Gewinnern im digitalen Wandel!
-          Wir helfen Ihnen, digitale Mitarbeiter und Wunsch-Mandanten zu gewinnen.
+          Der Fachkräftemangel in Kanzleien ist real. Wir lösen ihn – mit gezieltem
+          Social Recruiting und einem Netzwerk aus qualifizierten Kandidaten.
         </p>
 
         {/* CTA Buttons */}
@@ -130,7 +128,7 @@ const HeroSection = () => {
             </svg>
           </a>
           <a href="#leistungen" className="btn-secondary">
-            Mehr erfahren
+            So funktioniert's
           </a>
         </div>
 
@@ -146,7 +144,7 @@ const HeroSection = () => {
             <svg className="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 24 24">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span>Seit 2018 am Markt</span>
+            <span>500+ erfolgreiche Vermittlungen</span>
           </div>
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 24 24">

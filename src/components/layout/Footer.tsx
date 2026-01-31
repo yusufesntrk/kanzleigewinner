@@ -11,8 +11,8 @@ const Footer = () => {
               className="h-12 rounded-lg mb-4 bg-white p-1"
             />
             <p className="text-white/70 mb-4 max-w-md">
-              Kanzleigewinner hat bereits über 100 Kanzleien in der gesamten DACH-Region dabei geholfen,
-              den digitalen Wandel erfolgreich zu meistern.
+              Kanzleigewinner ist Ihr spezialisierter Partner für die Vermittlung von
+              Fachkräften an Steuerberatungs- und Rechtsanwaltskanzleien im DACH-Raum.
             </p>
             <div className="flex items-center gap-4">
               <a

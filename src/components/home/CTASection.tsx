@@ -12,21 +12,21 @@ const CTASection = () => {
           <div className="relative z-10 text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 text-sm font-medium mb-6 animate-fade-in">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               Kostenlos & Unverbindlich
             </div>
 
             {/* Headline */}
             <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up">
-              Bereit für den digitalen Erfolg?
+              Fachkräfte finden war noch nie so einfach
             </h2>
 
             {/* Subheadline */}
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
               Lassen Sie uns in einem kostenlosen Erstgespräch herausfinden,
-              wie wir Ihre Kanzlei auf das nächste Level bringen können.
+              wie wir Ihre offenen Stellen schnell und passend besetzen können.
             </p>
 
             {/* CTA Buttons */}
@@ -53,7 +53,7 @@ const CTASection = () => {
 
             {/* Trust Text */}
             <p className="text-white/60 text-sm mt-8 animate-fade-in animation-delay-300">
-              Über 100 Kanzleien vertrauen bereits auf Kanzleigewinner
+              Über 500 erfolgreiche Vermittlungen für 100+ Kanzleien
             </p>
           </div>
         </div>
