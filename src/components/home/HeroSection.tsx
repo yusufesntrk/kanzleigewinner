@@ -153,6 +153,7 @@ const HeroSection = () => {
             <span>1-2 Wochen bis zur Einstellung</span>
           </div>
         </div>
+
       </div>
     </section>
   );

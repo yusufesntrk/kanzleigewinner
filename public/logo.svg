@@ -1,0 +1,23 @@
+<svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Trophy/Crown shape representing "Gewinner" (Winner) -->
+  <g>
+    <!-- Trophy base -->
+    <rect x="4" y="38" width="32" height="4" rx="2" fill="#1FA363"/>
+    <rect x="12" y="32" width="16" height="8" rx="1" fill="#1FA363"/>
+
+    <!-- Trophy cup -->
+    <path d="M8 8C8 6.89543 8.89543 6 10 6H30C31.1046 6 32 6.89543 32 8V20C32 26.6274 26.6274 32 20 32C13.3726 32 8 26.6274 8 20V8Z" fill="#1FA363"/>
+
+    <!-- Trophy handles -->
+    <path d="M8 12H4C2.89543 12 2 12.8954 2 14V16C2 18.2091 3.79086 20 6 20H8" stroke="#1FA363" stroke-width="3" stroke-linecap="round"/>
+    <path d="M32 12H36C37.1046 12 38 12.8954 38 14V16C38 18.2091 36.2091 20 34 20H32" stroke="#1FA363" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Star in trophy -->
+    <path d="M20 11L21.5 15.5H26L22.5 18.5L24 23L20 20L16 23L17.5 18.5L14 15.5H18.5L20 11Z" fill="white"/>
+  </g>
+
+  <!-- Wordmark: Kanzleigewinner -->
+  <text x="48" y="33" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" fill="#1F1F1F">
+    <tspan>Kanzlei</tspan><tspan fill="#1FA363">gewinner</tspan>
+  </text>
+</svg>

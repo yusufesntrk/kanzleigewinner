@@ -1,3 +1,16 @@
+const partners = [
+  "ETL Nelles & Kollegen",
+  "B&L Berger Lindzus Lutz",
+  "Quentin / Quitter & Eckhardt",
+  "Dr. Schauer Steuerberater",
+  "Kanzlei Kronbiegel",
+  "adam, wüst & partner",
+  "Rendler & Hoferer",
+  "Gilpert & Kollegen",
+  "Reichelt Steuerberatung",
+  "Beck Steuerberatung",
+];
+
 const PartnerLogos = () => {
   return (
     <section className="py-12 px-4 md:px-8 border-y border-border/50">
@@ -8,23 +21,23 @@ const PartnerLogos = () => {
 
         {/* Marquee Container */}
         <div className="relative overflow-hidden">
-          <div className="flex animate-[marquee_30s_linear_infinite] gap-16">
+          <div className="flex animate-[marquee_40s_linear_infinite] gap-12">
             {/* First set */}
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {partners.map((name, i) => (
               <div
                 key={`logo-${i}`}
-                className="flex-shrink-0 w-32 h-12 bg-muted/50 rounded-lg flex items-center justify-center"
+                className="flex-shrink-0 px-6 py-3 bg-white rounded-xl border border-border/50 flex items-center justify-center shadow-sm"
               >
-                <span className="text-muted-foreground/50 font-medium">Kanzlei {i}</span>
+                <span className="text-secondary font-semibold whitespace-nowrap">{name}</span>
               </div>
             ))}
             {/* Duplicate for seamless loop */}
-            {[1, 2, 3, 4, 5, 6].map((i) => (
+            {partners.map((name, i) => (
               <div
                 key={`logo-dup-${i}`}
-                className="flex-shrink-0 w-32 h-12 bg-muted/50 rounded-lg flex items-center justify-center"
+                className="flex-shrink-0 px-6 py-3 bg-white rounded-xl border border-border/50 flex items-center justify-center shadow-sm"
               >
-                <span className="text-muted-foreground/50 font-medium">Kanzlei {i}</span>
+                <span className="text-secondary font-semibold whitespace-nowrap">{name}</span>
               </div>
             ))}
           </div>

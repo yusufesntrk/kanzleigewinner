@@ -1,31 +1,37 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isHomepage = location.pathname === "/";
 
   return (
     <nav className="w-full py-4 px-4 md:px-8 fixed top-0 z-50">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between bg-card/95 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-card border border-border/50">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 min-h-[44px]">
+          <Link to="/" className="flex items-center gap-2 min-h-[44px]">
             <img
-              src="https://kanzleigewinner.de/wp-content/uploads/2020/07/Kanzleigewinner_logo.jpg"
+              src="/logo.svg"
               alt="Kanzleigewinner Logo"
-              className="h-10 rounded-lg"
+              className="h-8 md:h-10"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-2">
-            <a href="#leistungen" className="nav-link">Leistungen</a>
-            <a href="#vorteile" className="nav-link">Vorteile</a>
-            <a href="#prozess" className="nav-link">Ablauf</a>
-            <a href="#testimonials" className="nav-link">Referenzen</a>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/fuer-kanzleien" className="nav-link">Für Kanzleien</Link>
+            <Link to="/fuer-kandidaten" className="nav-link">Für Kandidaten</Link>
+            <Link to="/referenzen" className="nav-link">Referenzen</Link>
+            {isHomepage && (
+              <a href="#prozess" className="nav-link">Ablauf</a>
+            )}
           </div>
 
           {/* CTA Button */}
-          <a href="#kontakt" className="hidden md:inline-flex btn-primary">
+          <a href={isHomepage ? "#kontakt" : "https://calendly.com/kanzleigewinner"} target={isHomepage ? undefined : "_blank"} rel={isHomepage ? undefined : "noopener noreferrer"} className="hidden md:inline-flex btn-primary">
             Erstgespräch
           </a>
 
@@ -48,11 +54,14 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-2 bg-card rounded-2xl shadow-card border border-border/50 p-4 animate-fade-in">
             <div className="flex flex-col gap-2">
-              <a href="#leistungen" className="nav-link text-center" onClick={() => setIsOpen(false)}>Leistungen</a>
-              <a href="#vorteile" className="nav-link text-center" onClick={() => setIsOpen(false)}>Vorteile</a>
-              <a href="#prozess" className="nav-link text-center" onClick={() => setIsOpen(false)}>Ablauf</a>
-              <a href="#testimonials" className="nav-link text-center" onClick={() => setIsOpen(false)}>Referenzen</a>
-              <a href="#kontakt" className="btn-primary text-center mt-2" onClick={() => setIsOpen(false)}>Erstgespräch</a>
+              <Link to="/" className="nav-link text-center" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/fuer-kanzleien" className="nav-link text-center" onClick={() => setIsOpen(false)}>Für Kanzleien</Link>
+              <Link to="/fuer-kandidaten" className="nav-link text-center" onClick={() => setIsOpen(false)}>Für Kandidaten</Link>
+              <Link to="/referenzen" className="nav-link text-center" onClick={() => setIsOpen(false)}>Referenzen</Link>
+              {isHomepage && (
+                <a href="#prozess" className="nav-link text-center" onClick={() => setIsOpen(false)}>Ablauf</a>
+              )}
+              <a href={isHomepage ? "#kontakt" : "https://calendly.com/kanzleigewinner"} target={isHomepage ? undefined : "_blank"} rel={isHomepage ? undefined : "noopener noreferrer"} className="btn-primary text-center mt-2" onClick={() => setIsOpen(false)}>Erstgespräch</a>
             </div>
           </div>
         )}

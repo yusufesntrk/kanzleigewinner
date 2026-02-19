@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-secondary text-white py-16 px-4 md:px-8">
@@ -5,11 +7,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo & Info */}
           <div className="md:col-span-2">
-            <img
-              src="https://kanzleigewinner.de/wp-content/uploads/2020/07/Kanzleigewinner_logo.jpg"
-              alt="Kanzleigewinner Logo"
-              className="h-12 rounded-lg mb-4 bg-white p-1"
-            />
+            <Link to="/">
+              <img
+                src="/logo-white.svg"
+                alt="Kanzleigewinner Logo"
+                className="h-10 mb-4"
+              />
+            </Link>
             <p className="text-white/70 mb-4 max-w-md">
               Kanzleigewinner ist Ihr spezialisierter Partner für die Vermittlung von
               Fachkräften an Steuerberatungs- und Rechtsanwaltskanzleien im DACH-Raum.
@@ -38,6 +42,27 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4">Services</h4>
+            <div className="space-y-3">
+              <Link to="/fuer-kanzleien" className="block text-white/70 hover:text-white transition-colors">
+                Für Kanzleien
+              </Link>
+              <Link to="/fuer-kandidaten" className="block text-white/70 hover:text-white transition-colors">
+                Für Kandidaten
+              </Link>
+              <a
+                href="https://calendly.com/kanzleigewinner"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-white/70 hover:text-white transition-colors"
+              >
+                Erstgespräch buchen
+              </a>
+            </div>
+          </div>
+
           {/* Kontakt */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Kontakt</h4>
@@ -52,27 +77,18 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Rechtliches</h4>
-            <div className="space-y-3">
-              <a href="/impressum" className="block text-white/70 hover:text-white transition-colors">
-                Impressum
-              </a>
-              <a href="/datenschutz" className="block text-white/70 hover:text-white transition-colors">
-                Datenschutz
-              </a>
-              <a href="/agb" className="block text-white/70 hover:text-white transition-colors">
-                AGB
-              </a>
-            </div>
-          </div>
         </div>
 
-        <div className="border-t border-white/10 mt-12 pt-8 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Kanzleigewinner. Alle Rechte vorbehalten.</p>
-          <p className="mt-1">Agentur Marketing Invasion UG (haftungsbeschränkt)</p>
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-white/50 text-sm">
+          <div className="text-center md:text-left">
+            <p>&copy; {new Date().getFullYear()} Kanzleigewinner. Alle Rechte vorbehalten.</p>
+            <p className="mt-1">Agentur Marketing Invasion UG (haftungsbeschränkt)</p>
+          </div>
+          <div className="flex items-center gap-6">
+            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+            <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
+            <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+          </div>
         </div>
       </div>
     </footer>
