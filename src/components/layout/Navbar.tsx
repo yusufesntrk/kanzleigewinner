@@ -24,6 +24,8 @@ const Navbar = () => {
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/fuer-kanzleien" className="nav-link">Für Kanzleien</Link>
             <Link to="/fuer-kandidaten" className="nav-link">Für Kandidaten</Link>
+            <Link to="/stellen" className="nav-link">Stellen</Link>
+            <Link to="/talente" className="nav-link">Talente</Link>
             <Link to="/referenzen" className="nav-link">Referenzen</Link>
             {isHomepage && (
               <a href="#prozess" className="nav-link">Ablauf</a>
@@ -57,6 +59,8 @@ const Navbar = () => {
               <Link to="/" className="nav-link text-center" onClick={() => setIsOpen(false)}>Home</Link>
               <Link to="/fuer-kanzleien" className="nav-link text-center" onClick={() => setIsOpen(false)}>Für Kanzleien</Link>
               <Link to="/fuer-kandidaten" className="nav-link text-center" onClick={() => setIsOpen(false)}>Für Kandidaten</Link>
+              <Link to="/stellen" className="nav-link text-center" onClick={() => setIsOpen(false)}>Stellen</Link>
+              <Link to="/talente" className="nav-link text-center" onClick={() => setIsOpen(false)}>Talente</Link>
               <Link to="/referenzen" className="nav-link text-center" onClick={() => setIsOpen(false)}>Referenzen</Link>
               {isHomepage && (
                 <a href="#prozess" className="nav-link text-center" onClick={() => setIsOpen(false)}>Ablauf</a>
