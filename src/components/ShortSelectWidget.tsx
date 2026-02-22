@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const SHORTSELECT_BASE_URL = "https://shortselect.com";
+const SHORTSELECT_BASE_URL = "https://www.shortselect.com";
 
 interface ShortSelectWidgetProps {
   widgetId: string;
