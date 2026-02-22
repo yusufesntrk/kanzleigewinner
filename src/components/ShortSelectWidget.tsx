@@ -43,6 +43,7 @@ const ShortSelectWidget = ({ widgetId, className = "", minHeight = "400px" }: Sh
         height: minHeight,
         transition: "height 0.2s ease",
         display: "block",
+        borderRadius: "1rem",
       }}
     />
   );

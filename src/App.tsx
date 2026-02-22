@@ -4,6 +4,7 @@ import HeroSection from "./components/home/HeroSection";
 import PartnerLogos from "./components/home/PartnerLogos";
 import ServicesSection from "./components/home/ServicesSection";
 import BenefitsSection from "./components/home/BenefitsSection";
+import JobsTalentsSection from "./components/home/JobsTalentsSection";
 import ProcessSection from "./components/home/ProcessSection";
 import TestimonialsSection from "./components/home/TestimonialsSection";
 import CTASection from "./components/home/CTASection";
@@ -18,6 +19,7 @@ function App() {
         <PartnerLogos />
         <ServicesSection />
         <BenefitsSection />
+        <JobsTalentsSection />
         <ProcessSection />
         <TestimonialsSection />
         <CTASection />

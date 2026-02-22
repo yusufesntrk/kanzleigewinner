@@ -46,17 +46,17 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Services</h4>
             <div className="space-y-3">
-              <Link to="/fuer-kanzleien" className="block text-white/70 hover:text-white transition-colors">
+              <Link to="/fuer-kanzleien" className="block text-white/70 hover:text-white transition-colors cursor-pointer">
                 Für Kanzleien
               </Link>
-              <Link to="/fuer-kandidaten" className="block text-white/70 hover:text-white transition-colors">
+              <Link to="/fuer-kandidaten" className="block text-white/70 hover:text-white transition-colors cursor-pointer">
                 Für Kandidaten
               </Link>
               <a
                 href="https://calendly.com/kanzleigewinner"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-white/70 hover:text-white transition-colors cursor-pointer"
               >
                 Erstgespräch buchen
               </a>
@@ -69,10 +69,10 @@ const Footer = () => {
             <div className="space-y-3 text-white/70">
               <p>Hauptstraße 126</p>
               <p>77652 Offenburg</p>
-              <a href="tel:078163909966" className="block hover:text-white transition-colors">
+              <a href="tel:078163909966" className="block hover:text-white transition-colors cursor-pointer">
                 0781 63909966
               </a>
-              <a href="mailto:info@kanzleigewinner.de" className="block hover:text-white transition-colors">
+              <a href="mailto:info@kanzleigewinner.de" className="block hover:text-white transition-colors cursor-pointer">
                 info@kanzleigewinner.de
               </a>
             </div>
@@ -85,9 +85,9 @@ const Footer = () => {
             <p className="mt-1">Agentur Marketing Invasion UG (haftungsbeschränkt)</p>
           </div>
           <div className="flex items-center gap-6">
-            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
-            <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
-            <a href="/agb" className="hover:text-white transition-colors">AGB</a>
+            <Link to="/impressum" className="cursor-pointer hover:text-white transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="cursor-pointer hover:text-white transition-colors">Datenschutz</Link>
+            <Link to="/agb" className="cursor-pointer hover:text-white transition-colors">AGB</Link>
           </div>
         </div>
       </div>

@@ -20,27 +20,27 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/fuer-kanzleien" className="nav-link">Für Kanzleien</Link>
-            <Link to="/fuer-kandidaten" className="nav-link">Für Kandidaten</Link>
-            <Link to="/stellen" className="nav-link">Stellen</Link>
-            <Link to="/talente" className="nav-link">Talente</Link>
-            <Link to="/referenzen" className="nav-link">Referenzen</Link>
+          <div className="hidden lg:flex items-center gap-1">
+            <Link to="/" className="nav-link whitespace-nowrap">Home</Link>
+            <Link to="/fuer-kanzleien" className="nav-link whitespace-nowrap">Für Kanzleien</Link>
+            <Link to="/fuer-kandidaten" className="nav-link whitespace-nowrap">Für Kandidaten</Link>
+            <Link to="/stellen" className="nav-link whitespace-nowrap">Stellen</Link>
+            <Link to="/talente" className="nav-link whitespace-nowrap">Talente</Link>
+            <Link to="/referenzen" className="nav-link whitespace-nowrap">Referenzen</Link>
             {isHomepage && (
-              <a href="#prozess" className="nav-link">Ablauf</a>
+              <a href="#prozess" className="nav-link whitespace-nowrap">Ablauf</a>
             )}
           </div>
 
           {/* CTA Button */}
-          <a href={isHomepage ? "#kontakt" : "https://calendly.com/kanzleigewinner"} target={isHomepage ? undefined : "_blank"} rel={isHomepage ? undefined : "noopener noreferrer"} className="hidden md:inline-flex btn-primary">
+          <a href={isHomepage ? "#kontakt" : "https://calendly.com/kanzleigewinner"} target={isHomepage ? undefined : "_blank"} rel={isHomepage ? undefined : "noopener noreferrer"} className="hidden lg:inline-flex btn-primary">
             Erstgespräch
           </a>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-muted/50 transition-colors"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-2 bg-card rounded-2xl shadow-card border border-border/50 p-4 animate-fade-in">
+          <div className="lg:hidden mt-2 bg-card rounded-2xl shadow-card border border-border/50 p-4 animate-fade-in">
             <div className="flex flex-col gap-2">
               <Link to="/" className="nav-link text-center" onClick={() => setIsOpen(false)}>Home</Link>
               <Link to="/fuer-kanzleien" className="nav-link text-center" onClick={() => setIsOpen(false)}>Für Kanzleien</Link>
